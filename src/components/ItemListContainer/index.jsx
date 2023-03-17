@@ -6,11 +6,18 @@ function ItemListContainer ({categoryId, CategoriaRoute}){
     const [productos, setProductos]= useState([]);
 
     useEffect(() => {
-        const productosRender= new Promise((resolve) => setTimeout(() => resolve(Productos), 2000));
-        productosRender.then((response)=>{
-            const filtroDeProductos = response.filter((producto)=>producto.categoria === categoryId)
+        const productosRender= new Promise((resolve) =>
+         setTimeout(() => resolve(Productos), 2000));
+        productosRender
+        .then((response)=>{
+            if(CategoriaRoute){
+            const filtroDeProductos = response.filter(
+                (producto)=> producto.categoria === categoryId)
             setProductos(filtroDeProductos);
-        })
+        } else {
+            
+        }
+    })
         .catch((error)=>console.log(error));
     },[])
 

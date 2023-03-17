@@ -14,7 +14,7 @@ function Root(){
         <div>
             <Header />
             <NavBar />
-            <ItemListContainer CategoriaRoute={CategoriaRoute} categoriaId={params.id}/>
+            <ItemListContainer CategoriaRoute={CategoriaRoute} categoryId={params.id}/>
         </div>
     )
 }
