@@ -15,7 +15,7 @@ function ItemListContainer ({categoryId, CategoriaRoute}){
                 (producto)=> producto.categoria === categoryId)
             setProductos(filtroDeProductos);
         } else {
-            
+            setProductos(response)
         }
     })
         .catch((error)=>console.log(error));
