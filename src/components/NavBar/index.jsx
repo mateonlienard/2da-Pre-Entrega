@@ -33,11 +33,11 @@ function NavBar() {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Buscar"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="secondary outline-success">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
