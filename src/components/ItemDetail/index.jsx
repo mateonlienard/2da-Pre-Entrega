@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 
 function ItemDetail({producto}){
     return(
-      <div>
-      <Card className='justify-content-center' style={{ width: '18rem' }}>
+      <div >
+      <Card className='d-flex justify-content-center' style={{ width: '18rem' }}>
         <Card.Img variant="top" src={producto.img} />
         <Card.Body>
           <Card.Title>{producto.titulo}</Card.Title>
