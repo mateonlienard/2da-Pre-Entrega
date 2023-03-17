@@ -3,16 +3,16 @@ import ItemDetailContainer from '../components/ItemDetailContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../components/Header';
 import {useParams} from 'react-router-dom'
-import ItemDetail from '../components/ItemDetail';
 
-function ItemRoot(producto){
+function ItemRoot(){
     const params= useParams()
-    console.log({params})
+    const ProductoRoute= Boolean(params.id);
+
     return(
         <div>
             <Header />
             <NavBar />
-            <ItemDetail producto={producto} key={producto.id} />
+            <ItemDetailContainer ProductoRoute={ProductoRoute} productoId={params.id} />
         </div>
     )
 }

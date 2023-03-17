@@ -8,8 +8,6 @@ function Root(){
     const params= useParams()
     const CategoriaRoute= Boolean(params.id);
 
-    console.log(CategoriaRoute)
-
     return(
         <div>
             <Header />

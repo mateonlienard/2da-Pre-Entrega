@@ -14,10 +14,7 @@ function ItemListContainer ({categoryId, CategoriaRoute}){
             const filtroDeProductos = response.filter(
                 (producto)=> producto.categoria === categoryId)
             setProductos(filtroDeProductos);
-        } else {
-            setProductos(response)
-        }
-    })
+        }})
         .catch((error)=>console.log(error));
     },[])
 

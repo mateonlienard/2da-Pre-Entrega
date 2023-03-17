@@ -2,12 +2,21 @@ import Productos from '../../mocks/products'
 import { useEffect, useState} from "react";
 import ItemDetail from '../ItemDetail/index';
 
-function itemDetailContainer(){
+function itemDetailContainer({productoId, ProductoRoute}){
     const [productos, setProductos]= useState([]);
 
     useEffect(() => {
         const productosRender= new Promise((resolve) => setTimeout(() => resolve(Productos), 2000));
-        productosRender.then((response)=>setProductos(response))
+        productosRender
+        .then((response)=>{
+            if(ProductoRoute){
+            const filtroDeProductos = response.filter(
+                (producto)=> producto.id === productoId)
+            setProductos(filtroDeProductos);
+        } else {
+            setProductos(response)
+        }
+    })
         .catch((error)=>console.log(error));
     },[])
     return (
