@@ -6,7 +6,7 @@ function ItemList({productos}) {
         <ul className='row m-3'>
           {productos.map((producto, index)=>(
           <Cards producto={producto} key={producto.id}/>
-          ))};
+          ))}
         </ul>
       </div>
     );
