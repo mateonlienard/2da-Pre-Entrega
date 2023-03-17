@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Button from 'react-bootstrap/Button';
 
 function ItemCount () {
     const [numero, setNumero]=useState(0);
@@ -13,7 +14,7 @@ function ItemCount () {
 
     return (
         <div>
-            <p><button onClick={restar}>-</button>{numero}<button onClick={sumar}>+</button></p>
+            <p><Button  size="sm" variant="outline-dark" onClick={restar}>-</Button>  {numero}  <Button size="sm" variant="outline-dark" onClick={sumar}>+</Button></p>
         </div>
     )
 }
