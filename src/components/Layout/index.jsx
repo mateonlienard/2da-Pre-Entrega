@@ -1,6 +1,7 @@
 import NavBar from "../NavBar";
 import {Outlet as Page} from 'react-router-dom'
 import Header from "../Header";
+import Footer from "../Footer";
 
 function Layout(){
     return(
@@ -8,6 +9,7 @@ function Layout(){
             <Header />
             <NavBar />
             <Page />
+            <Footer />
         </main>
     )
 }

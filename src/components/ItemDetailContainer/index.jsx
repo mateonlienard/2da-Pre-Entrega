@@ -24,7 +24,7 @@ function itemDetailContainer({productoId, ProductoRoute}){
             <ul className='row m-3'>
             {productos.map((producto, index)=>(
             <ItemDetail producto={producto} key={producto.id}/>
-            ))};
+            ))}
             </ul>
       </div>
     )
