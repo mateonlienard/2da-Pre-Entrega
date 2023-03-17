@@ -1,7 +1,6 @@
 import ItemListContainer from '../components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from 'react-router-dom'
-import Footer from '../components/Footer';
 
 function Root(){
     const params= useParams()
