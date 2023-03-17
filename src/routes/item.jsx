@@ -10,8 +10,6 @@ function ItemRoot(){
 
     return(
         <div>
-            <Header />
-            <NavBar />
             <ItemDetailContainer ProductoRoute={ProductoRoute} productoId={params.id} />
         </div>
     )

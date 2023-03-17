@@ -10,8 +10,6 @@ function Root(){
 
     return(
         <div>
-            <Header />
-            <NavBar />
             <ItemListContainer CategoriaRoute={CategoriaRoute} categoryId={params.id}/>
         </div>
     )
