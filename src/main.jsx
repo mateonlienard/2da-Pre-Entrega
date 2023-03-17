@@ -8,7 +8,7 @@ import ItemRoot from './routes/item'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ItemRoot />,
+    element: <Root />,
   },
   {
     path: '/category/:id',
