@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 function ItemDetail({producto}){
     return(
-      <div className='col-sm-2 m-3'>
+      <div className='col-sm-3 m-3'>
       <Card style={{ width: '12rem' }}>
         <Card.Img variant="top" src={producto.img} />
         <Card.Body>

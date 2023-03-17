@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/index'
 
 function Cards({producto}) {
   return(
-    <div className='col-sm-2 m-3'>
+    <div className='d-flex justify-content-around col-sm-3 m-3'>
       <Card style={{ width: '12rem' }}>
       <Card.Img variant="top" src={producto.img} />
       <Card.Body>
