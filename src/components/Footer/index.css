@@ -1,8 +1,10 @@
-.footerDiv{
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
     background-color: rgb(117, 117, 216);
     height: 3rem;
-    position: relative;
-    bottom: 0;
 }
 
 .footerP{
