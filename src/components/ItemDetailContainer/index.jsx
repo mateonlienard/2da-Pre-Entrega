@@ -2,7 +2,7 @@ import Productos from '../../mocks/products'
 import { useEffect, useState} from "react";
 import ItemDetail from '../ItemDetail/index';
 
-function itemDetailContainer({productoId, ProductoRoute}){
+function itemDetailContainer({ProductoId, ProductoRoute}){
     const [productos, setProductos]= useState([]);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ function itemDetailContainer({productoId, ProductoRoute}){
         .then((response)=>{
             if(ProductoRoute){
             const filtroDeProductos = response.filter(
-                (producto)=> producto.id === productoId)
+                (producto)=> producto.id === ProductoId)
             setProductos(filtroDeProductos);
         } else {
             setProductos(response)

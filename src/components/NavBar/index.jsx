@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 function NavBar() {
@@ -18,15 +19,15 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/category/Mouses">Mouses</NavDropdown.Item>
-              <NavDropdown.Item href="/category/Auris">Auriculares</NavDropdown.Item>
-              <NavDropdown.Item href="/category/Monitores">Monitores</NavDropdown.Item>
-              <NavDropdown.Item href="/category/TVS">Televisores</NavDropdown.Item>
+              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Mouses'}>Mouses</Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Auris'}>Auriculares</Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Monitores'}>Monitores</Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/TVS'}>Televisores</Nav.Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Contacto
+              <NavDropdown.Item>
+                <Nav.Link as={Link} to={''}>Contacto</Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

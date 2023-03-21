@@ -2,7 +2,7 @@ import { useEffect, useState} from "react";
 import ItemList from "../ItemList";
 import Productos from '../../mocks/products'
 
-function ItemListContainer ({categoryId, CategoriaRoute}){
+function ItemListContainer ({Categoryid, CategoriaRoute}){
     const [productos, setProductos]= useState([]);
 
     useEffect(() => {
@@ -12,8 +12,10 @@ function ItemListContainer ({categoryId, CategoriaRoute}){
         .then((response)=>{
             if(CategoriaRoute){
             const filtroDeProductos = response.filter(
-                (producto)=> producto.categoria === categoryId)
+                (producto)=> producto.categoria === Categoryid)
             setProductos(filtroDeProductos);
+        }else{
+            setProductos(response)
         }})
         .catch((error)=>console.log(error));
     },[])

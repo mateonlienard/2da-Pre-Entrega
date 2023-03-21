@@ -8,7 +8,7 @@ function ItemRoot(){
 
     return(
         <div>
-            <ItemDetailContainer ProductoRoute={ProductoRoute} productoId={params.id} />
+            <ItemDetailContainer ProductoRoute={ProductoRoute} ProductoId={params.id} />
         </div>
     )
 }
