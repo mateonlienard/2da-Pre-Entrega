@@ -11,8 +11,8 @@ function Root(){
 
     const [carrito, setCarrito] = useState([]);
 
-    const sumarAlCarrito = (item) => (
-        setCarrito([...carrito, item])
+    const sumarAlCarrito = (producto) => (
+        setCarrito([...carrito, producto])
     )
 
     return(
