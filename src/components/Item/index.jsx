@@ -9,7 +9,6 @@ function Cards({producto}) {
       <Card.Img variant="top" src={producto.img} />
       <Card.Body>
         <Card.Title>{producto.titulo}</Card.Title>
-        <Card.Text><ItemCount /></Card.Text>
         <Link class='btn btn-primary' to={`/item/${producto.id}`}>Ver detalles</Link>
       </Card.Body>
     </Card>
