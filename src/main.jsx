@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Root from './routes/root'
@@ -7,7 +7,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Layout from './components/Layout'
 
 const router = createBrowserRouter([
-{element: <Layout />, children: [
+  {element: <Layout />, children: [
       {
         path: '/',
         element: <Root />,
