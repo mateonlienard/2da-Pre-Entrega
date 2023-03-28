@@ -10,19 +10,19 @@ function ItemCount ({stock, añadir}) {
         <div>
             <div className='d-flex pb-2'>
                 <div>
-                <Button class='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState - 1)} disabled={amount < 2}>
+                <Button className='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState - 1)} disabled={amount < 2}>
                     -
                 </Button>
                 </div>
                 <div className='p-2'>{amount}</div>
                 <div>
-                <Button class='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState + 1)} disabled={amount === stock}>
+                <Button className='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState + 1)} disabled={amount === stock}>
                     +
                 </Button>
                 </div>
             </div>    
                 <div>
-                <Button class='btn btn-primary' variant="primary" onClick={()=>añadir(amount)}>
+                <Button className='btn btn-primary' variant="primary" onClick={()=>añadir(amount)}>
                     Agregar al carrito
                 </Button>
                 </div>
