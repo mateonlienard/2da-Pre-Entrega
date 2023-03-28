@@ -2,7 +2,7 @@
 export default [
 {
     id:"Mouse1",
-    cantidad:1,
+    cantidad:12,
     categoria:'Mouses',
     titulo:"Mouse Logitech G Series G203 azul",
     precio:4.999,

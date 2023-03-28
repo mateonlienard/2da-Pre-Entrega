@@ -1,14 +1,31 @@
-import {useContext, useState} from 'react';
+import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import { MyContext } from '../../routes/root';
 
-function ItemCount (producto) {
+function ItemCount ({stock, añadir}) {
 
-    const{sumarAlCarrito} = useContext(MyContext);
+    const [amount, setAmount] = useState(1);
 
     return (
+        
         <div>
-            <Button class='btn btn-primary' variant="primary" onClick={()=>sumarAlCarrito(producto)}>Sumar al carrito</Button>
+            <div className='d-flex pb-2'>
+                <div>
+                <Button class='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState - 1)} disabled={amount < 2}>
+                    -
+                </Button>
+                </div>
+                <div className='p-2'>{amount}</div>
+                <div>
+                <Button class='btn btn-dark' variant="primary" onClick={()=>setAmount((prevState)=>prevState + 1)} disabled={amount === stock}>
+                    +
+                </Button>
+                </div>
+            </div>    
+                <div>
+                <Button class='btn btn-primary' variant="primary" onClick={()=>añadir(amount)}>
+                    Agregar al carrito
+                </Button>
+                </div>
         </div>
     )
 }
