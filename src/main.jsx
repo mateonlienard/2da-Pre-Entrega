@@ -7,6 +7,7 @@ import './index.css'
 import Root from './routes/root'
 import ItemRoot from './routes/item'
 import { CustomProvider } from './context';
+import CartProvider from './components/Cart';
 
 import Layout from './components/Layout'
 
@@ -41,7 +42,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <CustomProvider>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </CustomProvider>
   </React.StrictMode>,
 )
