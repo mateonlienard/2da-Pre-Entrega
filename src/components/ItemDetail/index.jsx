@@ -1,15 +1,20 @@
 import { Button } from 'bootstrap';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount';
+import { Context } from '../../context';
 
 
 function ItemDetail({producto}){
+  const {onAdd}= useContext(Context)
+
   const [sumar, setSumar]= useState(0)
 
-  function onAdd(contar){
+  function añadir(contar){
     setSumar(contar)
+
+    onAdd(producto, contar)
   }
 
     return(
@@ -22,7 +27,7 @@ function ItemDetail({producto}){
           <Card.Text>Stock: {producto.cantidad}</Card.Text>
 
           <div>
-            {sumar == 0 && <ItemCount stock={producto.cantidad} onAdd={onAdd} />}
+            {sumar == 0 && <ItemCount stock={producto.cantidad} añadir={añadir} />}
             <div>
               {sumar >= 1 && (
                 <Link to='/cart'>

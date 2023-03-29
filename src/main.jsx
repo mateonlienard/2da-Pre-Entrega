@@ -6,6 +6,7 @@ import './index.css'
 
 import Root from './routes/root'
 import ItemRoot from './routes/item'
+import { CustomProvider } from './context';
 
 import Layout from './components/Layout'
 
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
   }
 ])
 
-export const Context = createContext()
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
