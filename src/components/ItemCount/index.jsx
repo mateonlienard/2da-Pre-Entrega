@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 
-function ItemCount ({stock, añadir}) {
+function ItemCount ({stock, onAdd}) {
 
     const [amount, setAmount] = useState(1);
 
@@ -22,9 +22,9 @@ function ItemCount ({stock, añadir}) {
                 </div>
             </div>    
                 <div>
-                <Button className='btn btn-primary' variant="primary" onClick={()=>añadir(amount)}>
-                    Agregar al carrito
-                </Button>
+                    <Button className='btn btn-primary' variant="primary" onClick={()=>onAdd(amount)}>
+                        Agregar al carrito
+                    </Button>
                 </div>
         </div>
     )

@@ -8,7 +8,7 @@ import ItemCount from '../ItemCount';
 function ItemDetail({producto}){
   const [sumar, setSumar]= useState(0)
 
-  function añadir(contar){
+  function onAdd(contar){
     setSumar(contar)
   }
 
@@ -20,8 +20,9 @@ function ItemDetail({producto}){
           <Card.Title>{producto.titulo}</Card.Title>
           <Card.Text>{producto.precio}</Card.Text>
           <Card.Text>Stock: {producto.cantidad}</Card.Text>
+
           <div>
-            {sumar == 0 && <ItemCount stock={producto.cantidad} añadir={añadir} />}
+            {sumar == 0 && <ItemCount stock={producto.cantidad} onAdd={onAdd} />}
             <div>
               {sumar >= 1 && (
                 <Link to='/cart'>
@@ -30,6 +31,7 @@ function ItemDetail({producto}){
               )}
             </div>
           </div>
+
         </Card.Body>
       </Card>
     </div>
