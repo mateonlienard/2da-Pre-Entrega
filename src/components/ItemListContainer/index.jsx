@@ -1,6 +1,7 @@
 import { useEffect, useState} from "react";
 import ItemList from "../ItemList";
 import Productos from '../../mocks/products'
+import { Context } from '../main'
 
 function ItemListContainer ({Categoryid, CategoriaRoute}){
     const [productos, setProductos]= useState([]);
@@ -21,9 +22,11 @@ function ItemListContainer ({Categoryid, CategoriaRoute}){
     },[])
 
     return (
-    <div>
-        <ItemList productos={productos} />
-    </div>
+        <Context.Provider value={{productos}}>
+            <div>
+                <ItemList/>
+            </div>
+        </Context.Provider>
 )}
 
 export default ItemListContainer;
