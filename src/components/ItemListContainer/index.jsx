@@ -12,7 +12,7 @@ function ItemListContainer ({Categoryid, CategoriaRoute}){
         .then((response)=>{
             if(CategoriaRoute){
             const filtroDeProductos = response.filter(
-                (producto)=> producto.categoria === Categoryid)
+                (producto)=> producto.stock === Categoryid)
             setProductos(filtroDeProductos);
         }else{
             setProductos(response)

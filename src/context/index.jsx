@@ -23,6 +23,9 @@ export function CustomProvider({children}){
         }
     }
 
+    function removeItem(productoId)
+    function clear(){}
+
     function estaEnCarrito(producto){
         return productosCarro.some((productosCarro)=>productosCarro.id === producto.id)
     }

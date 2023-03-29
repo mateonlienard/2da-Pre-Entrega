@@ -2,7 +2,7 @@
 export default [
 {
     id:"Mouse1",
-    cantidad:12,
+    stock:12,
     categoria:'Mouses',
     titulo:"Mouse Logitech G Series G203 azul",
     precio:4.999,
@@ -10,7 +10,7 @@ export default [
 },
 {
     id:"Mouse2",
-    cantidad:1,
+    stock:1,
     categoria:'Mouses',
     titulo:"Mouse inalámbrico Logitech M280 negro",
     precio:6.344,
@@ -18,7 +18,7 @@ export default [
 },
 {
     id:"Mouse3",
-    cantidad:1,
+    stock:1,
     categoria:'Mouses',
     titulo:"Mouse inalámbrico Logitech M170 negro",
     precio:3.423,
@@ -26,7 +26,7 @@ export default [
 },
 {
     id:"Mouse4",
-    cantidad:1,
+    stock:1,
     categoria:'Mouses',
     titulo:"Mouse Logitech G Series G403 negro",
     precio:4.367,
@@ -34,7 +34,7 @@ export default [
 },
 {
     id:"Mouse5",
-    cantidad:1,
+    stock:1,
     categoria:'Mouses',
     titulo:"Mouse Logitech G Series G502 negro",
     precio:2.458,
@@ -42,7 +42,7 @@ export default [
 },
 {
     id:"Mouse6",
-    cantidad:1,
+    stock:1,
     categoria:'Mouses',
     titulo:"Mouse inalámbrico Logitech M350 rosa",
     precio:2.999,
@@ -50,7 +50,7 @@ export default [
 },
 {
     id:"Auriculares1",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares inalámbricos Sony WF-1000XM4",
     precio:18.999,
@@ -58,7 +58,7 @@ export default [
 },
 {
     id:"Auriculares2",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares inalámbricos Sony WH-CH510",
     precio:4.999,
@@ -66,7 +66,7 @@ export default [
 },
 {
     id:"Auriculares3",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares inalámbricos Sony WI-C200",
     precio:4.499,
@@ -74,7 +74,7 @@ export default [
 },
 {
     id:"Auriculares4",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares inalámbricos Sony WF-C500",
     precio:10.999,
@@ -82,7 +82,7 @@ export default [
 },
 {
     id:"Auriculares5",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares Sony ZX Series MDR-ZX110",
     precio:2.699,
@@ -90,7 +90,7 @@ export default [
 },
 {
     id:"Auriculares6",
-    cantidad:1,
+    stock:1,
     categoria:'Auris',
     titulo:"Auriculares Sony ZX Series MDR-ZX310AP",
     precio:3.999,
@@ -98,7 +98,7 @@ export default [
 },
 {
     id:"Monitor1",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor Samsung F24T35 led 24",
     precio:11.341,
@@ -106,7 +106,7 @@ export default [
 },
 {
     id:"Monitor2",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor curvo Gigabyte G27QC led 27",
     precio:9.328,
@@ -114,7 +114,7 @@ export default [
 },
 {
     id:"Monitor3",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor Level Up 27-UP6580 led 27",
     precio:10.372,
@@ -122,7 +122,7 @@ export default [
 },
 {
     id:"Monitor4",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor curvo Samsung C24F390FH led 24",
     precio:8.172,
@@ -130,7 +130,7 @@ export default [
 },
 {
     id:"Monitor5",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor curvo Asus VG27VQ led 27",
     precio:9.237,
@@ -138,7 +138,7 @@ export default [
 },
 {
     id:"Monitor6",
-    cantidad:1,
+    stock:1,
     categoria:'Monitores',
     titulo:"Monitor curvo Samsung C24RG5 led 24",
     precio:10.334,
@@ -146,7 +146,7 @@ export default [
 },
 {
     id:"TV1",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV Philips 6800 Series LED HD 32",
     precio:25.543,
@@ -154,7 +154,7 @@ export default [
 },
 {
     id:"TV2",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV Noblex  LED HD 32",
     precio:23.284,
@@ -162,7 +162,7 @@ export default [
 },
 {
     id:"TV3",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV TCL S60A Series LED HD 32",
     precio:28.016,
@@ -170,7 +170,7 @@ export default [
 },
 {
     id:"TV4",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV Noblex LED HD 32",
     precio:25.239,
@@ -178,7 +178,7 @@ export default [
 },
 {
     id:"TV5",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV Samsung Series 4 LED HD 32",
     precio:26.888,
@@ -186,7 +186,7 @@ export default [
 },
 {
     id:"TV6",
-    cantidad:1,
+    stock:1,
     categoria:'TVS',
     titulo:"Smart TV BGH B3219K5 LED HD 32",
     precio:27.138,
