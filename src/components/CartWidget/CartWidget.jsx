@@ -5,12 +5,12 @@ import { useContext } from 'react';
 import { Context } from '../../context';
 
 function CartWidget(){
-    const {productosCarro}=useContext(Context)
+    const {totalItemsEnCart}=useContext(Context)
 
     return(
         <div className='carrito'>
             <FontAwesomeIcon icon={faCartShopping} />
-            {cart.lenght}
+            {totalItemsEnCart}
         </div>
     )
 }
