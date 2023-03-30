@@ -5,7 +5,12 @@ function Cart(){
     const {cart} = useContext(CustomProvider)
 
     return(
-        <div>{cart.map((producto)=>(<h1>{producto.precio}</h1>))}</div>
+        <div>{cart.map((producto)=>(
+         <>
+            <p>{producto.nombre}</p>
+            <p>{producto.precio}</p>
+         </>
+        ))}</div>
     )
 }
 
