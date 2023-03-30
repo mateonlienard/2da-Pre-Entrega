@@ -9,8 +9,8 @@ import { Context } from '../../context/index';
 function ItemDetail({producto}){
   const {cart, onAdd}= useContext(Context)
 
-  function handleAddToCart(contar){
-    onAdd(producto, contar)
+  function handleAddToCart(cantidad){
+    onAdd(producto, cantidad)
   }
 
     return(

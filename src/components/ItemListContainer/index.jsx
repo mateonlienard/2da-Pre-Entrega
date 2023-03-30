@@ -11,8 +11,7 @@ function ItemListContainer ({Categoryid, CategoriaRoute}){
         productosRender
         .then((response)=>{
             if(CategoriaRoute){
-            const filtroDeProductos = response.filter(
-                (producto)=> producto.stock === Categoryid)
+                const filtroDeProductos = response.filter((producto)=> producto.categoria === Categoryid)
             setProductos(filtroDeProductos);
         }else{
             setProductos(response)

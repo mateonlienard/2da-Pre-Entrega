@@ -11,16 +11,16 @@ export function CustomProvider({children}){
         cart.find(item=> item.id === id)
     }
 
-    function onAdd(item, contar){
+    function onAdd(item, cantidad){
         if(isInCart(item.id)){
             setCart(
                 cart.map((producto)=>{
                 return producto.id === item.id
-                 ? {...producto, contar: producto.contar + contar} 
+                 ? {...producto, cantidad: producto.cantidad + cantidad} 
                  : producto
             }))
         }else{
-            setCart([...cart, {...item, contar}]);
+            setCart([...cart, {...item, cantidad}]);
         }
     }
 
