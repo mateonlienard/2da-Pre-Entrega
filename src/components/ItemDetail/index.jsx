@@ -7,11 +7,11 @@ import { Context } from '../../context';
 
 
 function ItemDetail({producto}){
-  const {onAdd, cart}= useContext(Context)
+  const {onAdd, productosCarro}= useContext(Context)
 
   const [sumar, setSumar]= useState(0)
 
-  function añadirAlCarro(contar){
+  function handleAñadirAlCarro(contar){
     setSumar(contar)
 
     onAdd(producto, contar)
@@ -27,12 +27,10 @@ function ItemDetail({producto}){
           <Card.Text>Stock: {producto.cantidad}</Card.Text>
 
           <div>
-            {sumar == 0 && <ItemCount stock={producto.cantidad} añadirAlCarro={añadirAlCarro} />}
+            {sumar == 0 && <ItemCount stock={producto.cantidad} añadirAlCarro={handleAñadirAlCarro} />}
             <div>
               {sumar >= 1 && (
-                <Link to='/cart'>
                   <Button>Finalizar compra</Button>
-                </Link>
               )}
             </div>
           </div>

@@ -12,17 +12,17 @@ export function CustomProvider({children}){
 
         if(estaAñadido){
             const productoAModificar = productosCarro.find(
-            (productosCarro)=> productosCarro.id === producto.id)
+            (productosCarro)=> productosCarro.id === producto.id);
 
             const productoModificado = {
                 ...productoAModificar,
                 cantidad: productoAModificar.cantidad + cantidad
-            }
+            };
 
-            setProductosCarro((prevState)=>prevState.map((productosCarro)=> productosCarro.id === producto.id ? productoModificado : productosCarro ))
+            setProductosCarro((prevState)=>prevState.map((productosCarro)=> productosCarro.id === producto.id ? productoModificado : productosCarro ));
         }else{
-        setProductosCarro((prevState)=>
-         prevState.concat(producto, cantidad))
+            setProductosCarro((prevState)=>
+            prevState.concat(producto, cantidad))
         }
     }
 
@@ -33,10 +33,5 @@ export function CustomProvider({children}){
         )
     }
 
-    // Cart
-
-        const [cart, setCart] = useState([]);
-
-
-    return <Context.Provider value={{productosCarro, onAdd, cart}}>{children}</Context.Provider>
+    return <Context.Provider value={{productosCarro, onAdd}}>{children}</Context.Provider>
 }
