@@ -9,10 +9,7 @@ import { Context } from '../../context';
 function ItemDetail({producto}){
   const {cart, onAdd}= useContext(Context)
 
-  const [sumar, setSumar]= useState(0)
-
   function handleAddToCart(contar){
-    setSumar(contar)
     onAdd(producto, contar)
   }
 
