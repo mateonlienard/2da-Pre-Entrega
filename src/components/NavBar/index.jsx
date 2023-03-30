@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 import './navbar.css';
 
 function NavBar() {
@@ -31,15 +32,7 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="secondary outline-success">Buscar</Button>
-          </Form>
+          <CartWidget/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

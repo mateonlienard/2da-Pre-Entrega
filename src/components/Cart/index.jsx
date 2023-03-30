@@ -1,14 +1,13 @@
 import { useContext } from "react";
-import { CustomProvider } from "../../context";
+import { Context } from '../../context/index'
 
 function Cart(){
-    const {cart} = useContext(CustomProvider)
+    const {cart} = useContext(Context)
 
     return(
         <div>{cart.map((producto)=>(
          <>
-            <p>{producto.nombre}</p>
-            <p>{producto.precio}</p>
+            {cart}
          </>
         ))}</div>
     )
