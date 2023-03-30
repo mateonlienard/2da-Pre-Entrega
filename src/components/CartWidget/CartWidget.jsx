@@ -10,7 +10,7 @@ function CartWidget(){
     return(
         <div className='carrito'>
             <FontAwesomeIcon icon={faCartShopping} />
-            {productosCarro.lenght}
+            {cart.lenght}
         </div>
     )
 }
