@@ -9,6 +9,7 @@ import ItemRoot from './routes/item'
 import { CustomProvider } from './context';
 
 import Layout from './components/Layout'
+import Cart from './components/Cart';
 
 const router = createBrowserRouter([
   {element: <Layout />, children: [
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <div>hola</div>,
+        element: <Cart />,
       },
       {
         path: '/checkout',
