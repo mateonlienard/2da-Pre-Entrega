@@ -42,5 +42,9 @@ export function CustomProvider({children}){
         setCart([newCart])
     }
 
-    return <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto}}>{children}</Context.Provider>
+    function precioTotal(){
+        return cart.reduce((prev,act)=>prev + act.cantidad * act.precio, 0)
+    }
+
+    return <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, precioTotal}}>{children}</Context.Provider>
 }
