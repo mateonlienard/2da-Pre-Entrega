@@ -39,8 +39,8 @@ export function CustomProvider({children}){
 
     function totalItemsEnCart(){
         let total = 0;
-        cart.forEach (estaEnCarrito=>{
-            total = total + estaEnCarrito.cantidad
+        cart.forEach (isInCart=>{
+            total = total + isInCart.cantidad
         })
         return total;
     }
