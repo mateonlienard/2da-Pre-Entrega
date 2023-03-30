@@ -5,23 +5,23 @@ export const Context = createContext();
 // CustomProvider
 
 export function CustomProvider({children}){
-    const [productosCarro, setProductosCarro] = useState([])
+    const [cart, setCart] = useState([])
 
     function onAdd(producto, cantidad){
         const estaAñadido = estaEnCarrito(producto)
 
         if(estaAñadido){
-            const productoAModificar = productosCarro.find(
-            (productosCarro)=> productosCarro.id === producto.id);
+            const productoAModificar = cart.find(
+            (cart)=> cart.id === producto.id);
 
             const productoModificado = {
                 ...productoAModificar,
                 cantidad: productoAModificar.cantidad + cantidad
             };
 
-            setProductosCarro((prevState)=>prevState.map((productosCarro)=> productosCarro.id === producto.id ? productoModificado : productosCarro ));
+            setCart((prevState)=>prevState.map((cart)=> cart.id === producto.id ? productoModificado : cart ));
         }else{
-            setProductosCarro((prevState)=>
+            setCart((prevState)=>
             prevState.concat(producto, cantidad))
         }
     }
@@ -29,9 +29,9 @@ export function CustomProvider({children}){
 
     function estaEnCarrito(producto){
         return (
-            productosCarro.some((productosCarro)=>productosCarro.id === producto.id)
+            cart.some((cart)=>cart.id === producto.id)
         )
     }
 
-    return <Context.Provider value={{productosCarro, onAdd}}>{children}</Context.Provider>
+    return <Context.Provider value={{cart, onAdd}}>{children}</Context.Provider>
 }
