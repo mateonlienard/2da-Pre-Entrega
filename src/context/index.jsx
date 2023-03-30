@@ -20,7 +20,7 @@ export function CustomProvider({children}){
                  : producto
             }))
         }else{
-            setCart([...cart, {...producto, contar}]);
+            setCart([...cart, {...item, contar}]);
         }
     }
 
@@ -30,7 +30,7 @@ export function CustomProvider({children}){
     
     function removeProducto(prodARemover){
         let newCart = cart.filter(productoEnCarro=>productoEnCarro.id !== prodARemover)
-        setCart([newCart])
+        setCart(newCart)
     }
 
     function precioTotal(){
