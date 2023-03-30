@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const Context = createContext();
 
@@ -7,30 +7,18 @@ export const Context = createContext();
 export function CustomProvider({children}){
     const [cart, setCart] = useState([])
 
-    function onAdd(producto, cantidad){
-        const estaAñadido = estaEnCarrito(producto)
-
-        if(estaAñadido){
-            const productoAModificar = cart.find(
-            (cart)=> cart.id === producto.id);
-
-            const productoModificado = {
-                ...productoAModificar,
-                cantidad: productoAModificar.cantidad + cantidad
-            };
-
-            setCart((prevState)=>prevState.map((cart)=> cart.id === producto.id ? productoModificado : cart ));
+    function onAdd(producto, contar){
+        if(isInCart(producto.id)){
+            setCart(cart.map(product=>{
+                return product.id === producto.id ? {...product, contar: producto.contar + contar} : producto
+            }))
         }else{
-            setCart((prevState)=>
-            prevState.concat(producto, cantidad))
+            setCart([...cart, {producto, contar}]);
         }
     }
 
-
-    function estaEnCarrito(producto){
-        return (
-            cart.some((cart)=>cart.id === producto.id)
-        )
+    function isInCart(id){
+        cart.find(item=> item.id === id)
     }
 
     function vaciarCart(){
@@ -54,5 +42,9 @@ export function CustomProvider({children}){
         return total;
     }
 
-    return <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, precioTotal, totalItemsEnCart}}>{children}</Context.Provider>
+    return  <> 
+                <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, precioTotal, totalItemsEnCart}}>
+                    {children}
+                </Context.Provider>
+            </>
 }
