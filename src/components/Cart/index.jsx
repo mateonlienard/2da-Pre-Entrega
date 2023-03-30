@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import { Context } from '../../context/index'
+import './index.css'
 
 function Cart(){
     const {cart, precioTotal} = useContext(Context)
 
     return(
-        <div>
+        <div className="carro">
             {cart.map((producto)=>(
-                <div className="carro" key={producto.id}>
-                    <p>{producto.titulo}</p>
-                    <p>Cantidad: {producto.contar}</p>
-                    <p>Precio unitario: {producto.precio}</p>
-                    <p>Precio total: {precioTotal}</p>
+                <div key={producto.id}>
+                    <div>{producto.titulo}</div>
+                    <div>Cantidad: {producto.cantidad}</div>
+                    <div>Precio unitario: {producto.precio}</div>
+                    <div>Precio total: {precioTotal}</div>
                     <hr />
                 </div>
             ))}
