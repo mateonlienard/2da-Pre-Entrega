@@ -6,7 +6,7 @@ import './index.css'
 
 import Root from './routes/root'
 import ItemRoot from './routes/item'
-import { CustomProvider } from './context';
+import { CustomProvider } from '../src/context/index';
 
 import Layout from './components/Layout'
 import Cart from './components/Cart';

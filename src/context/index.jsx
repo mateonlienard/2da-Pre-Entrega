@@ -6,19 +6,22 @@ export const Context = createContext();
 
 export function CustomProvider({children}){
     const [cart, setCart] = useState([])
-
-    function onAdd(producto, contar){
-        if(isInCart(producto.id)){
-            setCart(cart.map(product=>{
-                return product.id === producto.id ? {...product, contar: producto.contar + contar} : producto
-            }))
-        }else{
-            setCart([...cart, {producto, contar}]);
-        }
-    }
-
+ 
     function isInCart(id){
         cart.find(item=> item.id === id)
+    }
+
+    function onAdd(item, contar){
+        if(isInCart(item.id)){
+            setCart(
+                cart.map((producto)=>{
+                return producto.id === item.id
+                 ? {...producto, contar: producto.contar + contar} 
+                 : producto
+            }))
+        }else{
+            setCart([...cart, {...producto, contar}]);
+        }
     }
 
     function vaciarCart(){
