@@ -33,7 +33,7 @@ export function CustomProvider({children}){
         )
     }
 
-    const vaciarCart=()=>{
+    function vaciarCart(){
         setCart([])
     }
 
