@@ -1,4 +1,4 @@
-import { Button } from 'bootstrap';
+import { Button } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
