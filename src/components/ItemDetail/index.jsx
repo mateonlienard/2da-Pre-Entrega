@@ -7,7 +7,9 @@ import { Context } from '../../context';
 
 
 function ItemDetail({producto}){
-  const {onAdd}= useContext(Context)
+  const {onAdd, cart}= useContext(Context)
+
+  console.log(cart)
 
   const [sumar, setSumar]= useState(0)
 

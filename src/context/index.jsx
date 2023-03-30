@@ -1,6 +1,9 @@
 import { createContext, useState } from "react";
 
 export const Context = createContext();
+
+// CustomProvider
+
 export function CustomProvider({children}){
     const [productosCarro, setProductosCarro] = useState([])
 
@@ -23,12 +26,17 @@ export function CustomProvider({children}){
         }
     }
 
-    function removeItem(productoId)
-    function clear(){}
 
     function estaEnCarrito(producto){
-        return productosCarro.some((productosCarro)=>productosCarro.id === producto.id)
+        return (
+            productosCarro.some((productosCarro)=>productosCarro.id === producto.id)
+        )
     }
 
-    return <Context.Provider value={{productosCarro, onAdd}}>{children}</Context.Provider>
+    // Cart
+
+        const [cart, setCart] = useState([]);
+
+
+    return <Context.Provider value={{productosCarro, onAdd, cart}}>{children}</Context.Provider>
 }
