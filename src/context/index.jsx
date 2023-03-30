@@ -36,6 +36,11 @@ export function CustomProvider({children}){
     function vaciarCart(){
         setCart([])
     }
+    
+    function removeProducto(prodARemover){
+        let newCart = cart.filter(productoEnCarro=>productoEnCarro.id !== prodARemover)
+        setCart([newCart])
+    }
 
-    return <Context.Provider value={{cart, onAdd}}>{children}</Context.Provider>
+    return <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto}}>{children}</Context.Provider>
 }
