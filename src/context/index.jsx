@@ -33,5 +33,9 @@ export function CustomProvider({children}){
         )
     }
 
+    const vaciarCart=()=>{
+        setCart([])
+    }
+
     return <Context.Provider value={{cart, onAdd}}>{children}</Context.Provider>
 }
