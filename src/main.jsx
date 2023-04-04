@@ -11,12 +11,8 @@ import { CustomProvider } from '../src/context/index';
 import Layout from './components/Layout'
 import Cart from './components/Cart';
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDhBoQVxlmM6lm0Sfm9pplrYQxCl0eKK1o",
   authDomain: "proyecto-react-coderhous-72576.firebaseapp.com",
@@ -26,8 +22,7 @@ const firebaseConfig = {
   appId: "1:124400284240:web:c0853b56367f4ee1bf5755"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const router = createBrowserRouter([
   {element: <Layout />, children: [
