@@ -1,11 +1,11 @@
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount';
 import { Button } from 'react-bootstrap';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/index';
 
-function ItemDetail(){
+function ItemDetail(producto){
   const {cart, onAdd}= useContext(Context)
 
   function handleAddToCart(cantidad){
