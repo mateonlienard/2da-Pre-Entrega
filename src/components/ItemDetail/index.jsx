@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/index';
 
-function ItemDetail(producto){
+function ItemDetail({producto}){
   const {cart, onAdd}= useContext(Context)
 
   function handleAddToCart(cantidad){
