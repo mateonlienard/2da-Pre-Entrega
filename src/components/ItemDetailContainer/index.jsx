@@ -6,7 +6,8 @@ function itemDetailContainer({ProductoId, ProductoRoute}){
     const [productos, setProductos]= useState([]);
 
     useEffect(() => {
-        const productosRender= new Promise((resolve) => setTimeout(() => resolve(Productos), 2000));
+        const productosRender= new Promise((resolve) =>
+         setTimeout(() => resolve(Productos), 2000));
         productosRender
         .then((response)=>{
             if(ProductoRoute){
