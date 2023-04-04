@@ -1,31 +1,34 @@
-import Productos from '../../mocks/products'
 import { useEffect, useState} from "react";
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import { useParams } from "react-router-dom";
 import ItemDetail from '../ItemDetail/index';
 
 function itemDetailContainer({ProductoId, ProductoRoute}){
-    const [productos, setProductos]= useState([]);
 
-    useEffect(() => {
-        const productosRender= new Promise((resolve) =>
-         setTimeout(() => resolve(Productos), 2000));
-        productosRender
-        .then((response)=>{
-            if(ProductoRoute){
-            const filtroDeProductos = response.filter(
-                (producto)=> producto.id === ProductoId)
-            setProductos(filtroDeProductos);
-        } else {
-            setProductos(response)
-        }
-    })
-        .catch((error)=>console.log(error));
-    },[])
+    const [producto, setProducto] = useState(null);
+    const params = useParams()
+
+    useEffect(()=>{
+      const db = getFirestore()
+      const prodRef = doc(db, 'Productos', params.id)
+
+    getDoc(prodRef)
+        .then((snapshot)=>{
+            if(snapshot.exists()){
+                setProducto({id: snapshot.id, ...snapshot.data()})
+            }
+        })
+        .catch((error)=>console.log({error}))      
+    }, []);
+
+    if(!producto){
+      return <p>Cargando...</p>
+    }
+
     return (
         <div>
             <ul className='row m-3'>
-            {productos.map((producto, index)=>(
-            <ItemDetail producto={producto} key={producto.id}/>
-            ))}
+            <ItemDetail producto={producto}/>
             </ul>
       </div>
     )

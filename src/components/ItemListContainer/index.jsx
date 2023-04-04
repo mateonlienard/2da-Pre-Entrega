@@ -1,23 +1,31 @@
 import { useEffect, useState} from "react";
+import { collection, getFirestore, getDocs, query, where } from "firebase/firestore";
 import ItemList from "../ItemList";
-import Productos from '../../mocks/products'
 
 function ItemListContainer ({Categoryid, CategoriaRoute}){
     const [productos, setProductos]= useState([]);
 
-    useEffect(() => {
-        const productosRender= new Promise((resolve) =>
-         setTimeout(() => resolve(Productos), 2000));
-        productosRender
-        .then((response)=>{
-            if(CategoriaRoute){
-                const filtroDeProductos = response.filter((producto)=> producto.categoria === Categoryid)
-            setProductos(filtroDeProductos);
+    useEffect(()=>{
+        const db = getFirestore()
+        const prodCollection = collection(db, 'Productos')
+
+        if(CategoriaRoute){
+            const queryResult = query(prodCollection, where('categoria', '==', Categoryid))
+            getDocs(queryResult)
+            .then((snapshot)=>{
+                const docs = snapshot.docs
+                setProductos(docs.map((doc)=> ({id: doc.id, ...doc.data() })))
+            })
+            .catch((error)=>console.log({error}));
         }else{
-            setProductos(response)
-        }})
-        .catch((error)=>console.log(error));
-    },[])
+            getDocs(prodCollection)
+            .then((snapshot)=>{
+                const docs = snapshot.docs
+                setProductos(docs.map((doc)=> ({id: doc.id, ...doc.data() })))
+            })
+            .catch((error)=>console.log({error}));
+        }
+    }, [Categoryid])
 
     return (
             <div>
