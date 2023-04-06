@@ -33,20 +33,8 @@ export function CustomProvider({children}){
         setCart(newCart)
     }
 
-    function precioTotal(){
-        return cart.reduce((prev,act)=>prev + act.cantidad * act.precio, 0)
-    }
-
-    function totalItemsEnCart(){
-        let total = 0;
-        cart.forEach (isInCart=>{
-            total = total + isInCart.cantidad
-        })
-        return total;
-    }
-
     return  <> 
-                <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, precioTotal, totalItemsEnCart}}>
+                <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto}}>
                     {children}
                 </Context.Provider>
             </>

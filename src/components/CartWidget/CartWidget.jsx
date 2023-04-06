@@ -6,13 +6,13 @@ import { Context } from '../../context/index';
 import { Link } from 'react-router-dom';
 
 function CartWidget(){
-    const {totalItemsEnCart}=useContext(Context)
+    const {cart}=useContext(Context)
 
     return(
         <Link to='/cart'>
             <div className='carrito'>
-                <FontAwesomeIcon icon={faCartShopping} />
-                <p>{totalItemsEnCart}</p>
+                <FontAwesomeIcon icon={faCartShopping}/>
+                <p className='carritoP'>{cart.length}</p>
             </div>
         </Link>
     )

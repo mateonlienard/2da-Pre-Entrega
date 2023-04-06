@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../context/index';
 
 function ItemDetail({producto}){
-  const {cart, onAdd}= useContext(Context)
+  const {onAdd}= useContext(Context)
 
   function handleAddToCart(cantidad){
     onAdd(producto, cantidad)
