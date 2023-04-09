@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import './index.css'
 
 function Cart(){
-    const {cart} = useContext(Context)
+    const {cart, setCart} = useContext(Context)
     const db = getFirestore();
 
     function updateOrder(productoId, finalStock){
@@ -36,15 +36,22 @@ function Cart(){
         .catch(error=>console.log({error}))
     }
 
+    function removeItem(index) {
+        setCart(cart.filter((_, i) => i !== index));
+    }
+    
+
     return(
         <div className="carro">
-            {cart.map((producto)=>(
+            {cart.map((producto, index)=>(
                 <div key={producto.id}>
                     <span>{producto.titulo}</span>
                     <br />
                     <span>Cantidad: {producto.cantidad}</span>
                     <br />
                     <span>Precio unitario: {producto.precio}</span>
+                    <br />
+                    <Button variant="danger" onClick={() => removeItem(index)}>Eliminar item</Button>
                     <br />
                     <br />
                 </div>

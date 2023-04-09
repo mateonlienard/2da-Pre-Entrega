@@ -36,7 +36,7 @@ export function CustomProvider({children}){
     }
 
     return  <> 
-                <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto}}>
+                <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, setCart}}>
                     {children}
                 </Context.Provider>
             </>
