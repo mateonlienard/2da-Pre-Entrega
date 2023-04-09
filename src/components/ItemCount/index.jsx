@@ -1,8 +1,8 @@
 import {useContext, useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import Context from 'react-bootstrap/esm/AccordionContext';
+import { Context } from '../../context/index';
 
-function ItemCount ({stock, addToCart}) {
+function ItemCount ({stock, addToCart, productId}) {
 
     const {removeProducto} = useContext(Context)
 
@@ -28,7 +28,7 @@ function ItemCount ({stock, addToCart}) {
                     <Button className='btn btn-primary' variant="primary" onClick={()=>{addToCart(amount)}}>
                         Agregar al carrito
                     </Button>
-                    <Button className='mt-2' variant='danger' onClick={()=>{removeProducto(amount)}}>
+                    <Button className='mt-2' variant='danger' onClick={()=>{removeProducto(productId)}}>
                         Eliminar del carrito
                     </Button>
                 </div>

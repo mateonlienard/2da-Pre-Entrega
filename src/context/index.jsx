@@ -30,10 +30,10 @@ export function CustomProvider({children}){
         setCart([])
     }
     
-    function removeProducto(prodARemover){
-        let newCart = cart.filter(productoEnCarro=>productoEnCarro.id !== prodARemover)
-        setCart(newCart)
-    }
+    function removeProducto(idProductoARemover){
+        let newCart = cart.filter(productoEnCarro => productoEnCarro.id !== idProductoARemover);
+        setCart(newCart);
+      }      
 
     return  <> 
                 <Context.Provider value={{cart, onAdd, vaciarCart, removeProducto, setCart}}>

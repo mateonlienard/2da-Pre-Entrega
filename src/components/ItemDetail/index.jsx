@@ -22,7 +22,7 @@ function ItemDetail({producto}){
           <Card.Text>Stock: {producto.stock}</Card.Text>
 
           <div>
-            <ItemCount stock={producto.stock} addToCart={handleAddToCart} />
+            <ItemCount stock={producto.stock} addToCart={handleAddToCart} productId={producto.id} />
             <div className='pt-2'>
                   <Link to='/cart'>
                     <Button variant='dark'>Finalizar compra</Button>
