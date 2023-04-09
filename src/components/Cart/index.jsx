@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from '../../context/index'
 import {collection, getFirestore, addDoc, doc, updateDoc} from 'firebase/firestore'
+import { Button } from 'react-bootstrap';
 import './index.css'
 
 function Cart(){
@@ -19,7 +20,7 @@ function Cart(){
         )
 
         const order = {
-            buyer: {name: mateo, mail: 'mateon@gmail.com', phone: '1173618344'},
+            buyer: {name: 'mateo', mail: 'mateon@gmail.com', phone: '1173618344'},
             products: cart,
             total
         }
@@ -46,9 +47,11 @@ function Cart(){
                     <span>Precio unitario: {producto.precio}</span>
                     <br />
                     <br />
-                    <button onClick={sendOrder}>Terminar compra</button>
                 </div>
             ))}
+            <div className="boton">
+                <Button variant="success" onClick={sendOrder}>Terminar compra</Button>
+            </div>
         </div>
     )
 }

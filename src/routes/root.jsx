@@ -8,7 +8,7 @@ function Root(){
 
     return(
             <div>
-                <ItemListContainer CategoriaRoute={CategoriaRoute} CategoryId={params.id}/>
+                <ItemListContainer CategoriaRoute={CategoriaRoute} Categoryid={params.id}/>
             </div>
     )
 }

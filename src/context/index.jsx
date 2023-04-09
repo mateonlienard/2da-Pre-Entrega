@@ -8,11 +8,12 @@ export function CustomProvider({children}){
     const [cart, setCart] = useState([])
  
     function isInCart(id){
-        cart.find(item=> item.id === id)
+        return cart.find(item=> item.id === id)
     }
 
     function onAdd(item, cantidad){
-        if(isInCart(item.id)){
+        const productoEnCarro = isInCart(item.id);
+        if(productoEnCarro){
             setCart(
                 cart.map((producto)=>{
                 return producto.id === item.id
@@ -23,6 +24,7 @@ export function CustomProvider({children}){
             setCart([...cart, {...item, cantidad}]);
         }
     }
+    
 
     function vaciarCart(){
         setCart([])
