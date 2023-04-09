@@ -25,7 +25,7 @@ function ItemDetail({producto}){
             <ItemCount stock={producto.stock} addToCart={handleAddToCart} />
             <div className='pt-2'>
                   <Link to='/cart'>
-                    <Button>Finalizar compra</Button>
+                    <Button variant='dark'>Finalizar compra</Button>
                   </Link>
             </div>
           </div>
