@@ -20,10 +20,10 @@ function NavBar() {
           >
             <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
-              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Mouses'}>Mouses</Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Auris'}>Auriculares</Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/Monitores'}>Monitores</Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item ><Nav.Link as={Link} to={'/category/TVS'}>Televisores</Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item ><Link className='linkNavbar' to={'/category/Mouses'}>Mouses</Link></NavDropdown.Item>
+              <NavDropdown.Item ><Link className='linkNavbar' to={'/category/Auris'}>Auriculares</Link></NavDropdown.Item>
+              <NavDropdown.Item ><Link className='linkNavbar' to={'/category/Monitores'}>Monitores</Link></NavDropdown.Item>
+              <NavDropdown.Item ><Link className='linkNavbar' to={'/category/TVS'}>Televisores</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 <Nav.Link as={Link} to={''}>Contacto</Nav.Link>
