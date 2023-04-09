@@ -5,7 +5,7 @@ function Cards({producto}) {
   return(
     <div className='d-flex justify-content-around col-sm-3 mb-5'>
       <Card style={{ width: '13rem' }}>
-      <Card.Img variant="top" src={producto.img} />
+      <Card.Img variant="top" src={producto.image} />
       <Card.Body>
         <Card.Title>{producto.titulo}</Card.Title>
         <Link className='btn btn-primary' to={`/item/${producto.id}`}>Ver detalles</Link>

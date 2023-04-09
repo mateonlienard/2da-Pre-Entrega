@@ -15,7 +15,7 @@ function ItemDetail({producto}){
     return(
       <div className='d-flex justify-content-center mb-5'>
       <Card  style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={producto.img} />
+        <Card.Img variant="top" src={producto.image} />
         <Card.Body>
           <Card.Title>{producto.titulo}</Card.Title>
           <Card.Text>{producto.precio}</Card.Text>
